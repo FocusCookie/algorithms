@@ -1,5 +1,5 @@
 let myList = [];
-for (let i = 0; i <= 128; i++) {
+for (let i = 5; i <= 30; i++) {
   myList.push(i);
 }
 
@@ -11,9 +11,8 @@ function binarySearch(list, item) {
     let mid = Math.round((low + high) / 2);
     let guess = list[mid];
 
-    if (guess === item) {
-      return mid;
-    }
+    if (guess === item) return mid;
+
     if (guess > item) {
       high = mid - 1;
     } else {
@@ -23,8 +22,12 @@ function binarySearch(list, item) {
 
   return null;
 }
-const searchFor = 200;
+const searchFor = 23;
 const result = binarySearch(myList, searchFor);
 result
-  ? console.log("value of the search ", myList[result])
+  ? console.log(
+      `value of the search ${myList[result]} and it is at the position ${result} in the myList array.`
+    )
   : console.log(searchFor, "doens´t exist in list");
+
+console.log(myList);
