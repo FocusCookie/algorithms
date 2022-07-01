@@ -6,7 +6,6 @@ function mergeTwoSortedArrays(arr1, arr2) {
         var value1 = arr1[arr1Index];
         var value2 = arr2[arr2Index];
         if (value1 !== undefined && value2 !== undefined) {
-            console.log("booth");
             if (value1 < value2) {
                 merged.push(value1);
                 arr1Index++;
@@ -17,18 +16,16 @@ function mergeTwoSortedArrays(arr1, arr2) {
             }
         }
         if (value1 !== undefined && value2 === undefined) {
-            console.log("first");
             merged.push(value1);
             arr1Index++;
         }
         if (value1 === undefined && value2 !== undefined) {
-            console.log("sec");
             merged.push(value2);
             arr2Index++;
         }
     }
     return merged;
 }
-var testArr1 = [1, 3, 6];
+var testArr1 = [1, 3, 6, 7, 8, 9, 10, 100];
 var testArr2 = [-12, 4, 5, 8];
 console.log(mergeTwoSortedArrays(testArr1, testArr2));

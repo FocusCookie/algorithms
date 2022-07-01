@@ -9,7 +9,6 @@ function mergeTwoSortedArrays(arr1: number[], arr2: number[]): number[] {
     const value2: number = arr2[arr2Index];
 
     if (value1 !== undefined && value2 !== undefined) {
-      console.log("booth");
       if (value1 < value2) {
         merged.push(value1);
         arr1Index++;
@@ -20,13 +19,11 @@ function mergeTwoSortedArrays(arr1: number[], arr2: number[]): number[] {
     }
 
     if (value1 !== undefined && value2 === undefined) {
-      console.log("first");
       merged.push(value1);
       arr1Index++;
     }
 
     if (value1 === undefined && value2 !== undefined) {
-      console.log("sec");
       merged.push(value2);
       arr2Index++;
     }
@@ -35,7 +32,7 @@ function mergeTwoSortedArrays(arr1: number[], arr2: number[]): number[] {
   return merged;
 }
 
-const testArr1: number[] = [1, 3, 6];
+const testArr1: number[] = [1, 3, 6, 7, 8, 9, 10, 100];
 const testArr2: number[] = [-12, 4, 5, 8];
 
 console.log(mergeTwoSortedArrays(testArr1, testArr2));
