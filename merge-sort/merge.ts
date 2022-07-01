@@ -35,4 +35,17 @@ function mergeTwoSortedArrays(arr1: number[], arr2: number[]): number[] {
 const testArr1: number[] = [1, 3, 6, 7, 8, 9, 10, 100];
 const testArr2: number[] = [-12, 4, 5, 8];
 
-console.log(mergeTwoSortedArrays(testArr1, testArr2));
+function mergeSort(arr: number[]): number[] {
+  if (arr.length <= 1) return arr;
+
+  const mid = Math.floor(arr.length / 2);
+
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+
+  return mergeTwoSortedArrays(left, right);
+}
+
+const unsortedTestArr = [, 1, 8, 3, 5, 2, 8, 99, 32, 1, -1, -24];
+
+console.log(mergeSort(unsortedTestArr));
